@@ -3,7 +3,11 @@ package unitConverter;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Insets;
+
 import javax.swing.BorderFactory;
+import javax.swing.border.Border;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,8 +28,10 @@ public class UnitConverter extends JFrame{
 	JLabel fromlbl = new JLabel();
 	JLabel tolbl = new JLabel();
 	
-	JPanel panel = new JPanel();
-	ImageIcon icon = new ImageIcon("bg3.png");
+	JPanel headerPanel = new JPanel();
+	JPanel mainPanel = new JPanel();
+	
+	ImageIcon icon = new ImageIcon("icon.png");
 	ImageIcon BgImage = new ImageIcon(new ImageIcon("bg3.png").getImage().getScaledInstance(450, 500, Image.SCALE_SMOOTH) );
 	
 	UnitConverter(){
@@ -128,16 +134,30 @@ public class UnitConverter extends JFrame{
         
         
         //header
-        this.add(header);
+        headerPanel.add(header);
         header.setBounds(55, 30, 325, 60);
         header.setText("Unit Converter");
         header.setFont(new Font("Segoe UI Variable Text Semibold", Font.BOLD,45));
-        header.setForeground(Color.WHITE);
+        header.setForeground(Color.decode("#edc6b1"));
       //  header.setBorder(BorderFactory.createLineBorder(Color.decode("#f90400"), 5));
+        
+        this.add(headerPanel);
+        headerPanel.setBounds(10, 10, 415, 80);
+        headerPanel.setBackground(Color.decode("#2d4a87"));
+        Border blackBorder = BorderFactory.createLineBorder(Color.BLACK, 1);
+        headerPanel.setBorder(blackBorder);
+        
         
         //combo box from
         this.add(converterFrom);
         converterFrom.setBounds(20, 220, 150, 30);
+        
+        
+       // this.add(mainPanel);
+        mainPanel.setBounds(10,100, 415, 350);
+        mainPanel.setBackground(Color.decode("#2d4a87"));
+        blackBorder = BorderFactory.createLineBorder(Color.BLACK, 1);
+        mainPanel.setBorder(blackBorder);
         
         //label from
         this.add(fromlbl);	
