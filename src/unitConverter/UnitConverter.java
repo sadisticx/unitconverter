@@ -2,6 +2,7 @@ package unitConverter;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Insets;
 
@@ -51,10 +52,16 @@ public class UnitConverter extends JFrame{
         	
         this.setLayout(null);
         this.setVisible(true);
-
+        
+        
+        
         //combo box unit
         this.add(converterUnit);
         converterUnit.setBounds(130, 110, 170, 30);
+        converterUnit.setBackground(Color.decode("#659bd3")); // Sets the background color 
+        //converterUnit.getEditor().getEditorComponent().setBackground(Color.YELLOW);
+        //((JTextField) converterUnit.getEditor().getEditorComponent()).setBackground(Color.YELLOW);
+        
         converterUnit.addItem("Length");
         converterUnit.addItem("Weight");
         converterUnit.addItem("Temperature");
@@ -131,7 +138,7 @@ public class UnitConverter extends JFrame{
 				converterTo.addItem("Year(s)");
 				}
 			}});
-        
+      
         
         //header
         headerPanel.add(header);
@@ -139,7 +146,7 @@ public class UnitConverter extends JFrame{
         header.setText("Unit Converter");
         header.setFont(new Font("Segoe UI Variable Text Semibold", Font.BOLD,45));
         header.setForeground(Color.decode("#edc6b1"));
-      //  header.setBorder(BorderFactory.createLineBorder(Color.decode("#f90400"), 5));
+        //header.setBorder(BorderFactory.createLineBorder(Color.decode("#f90400"), 5));
         
         this.add(headerPanel);
         headerPanel.setBounds(10, 10, 415, 80);
@@ -151,7 +158,7 @@ public class UnitConverter extends JFrame{
         //combo box from
         this.add(converterFrom);
         converterFrom.setBounds(20, 220, 150, 30);
-        
+        converterFrom.setBackground(Color.decode("#659bd3"));
         
        // this.add(mainPanel);
         mainPanel.setBounds(10,100, 415, 350);
@@ -174,6 +181,7 @@ public class UnitConverter extends JFrame{
         //combo box to
         this.add(converterTo);
         converterTo.setBounds(250, 220, 150, 30);
+        converterTo.setBackground(Color.decode("#659bd3"));
         
         //label to
         this.add(tolbl);
@@ -590,5 +598,11 @@ public class UnitConverter extends JFrame{
 				txtTo.setText(String.valueOf(conversion));	
 				
 			}});
+        convert.setBackground(Color.decode("#126d9c"));
+        convert.setForeground(Color.white);
+        convert.setFont(new Font("Sans Serif", Font.BOLD, 20));
+        blackBorder = BorderFactory.createLineBorder(Color.BLACK, 1);
+        convert.setBorder(blackBorder);
+	
 	}
 }
